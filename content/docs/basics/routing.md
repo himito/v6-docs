@@ -374,7 +374,7 @@ The routes inside a group must have names before you can prefix them.
 // title: start/routes.ts
 router
   .group(() => {
-    route
+    router
       .get('users', () => {})
       .as('users.index') // final name - api.users.index
   })
@@ -388,13 +388,13 @@ In the case of nested groups, the names will be prefixed from the outer to the i
 // title: start/routes.ts
 router
   .group(() => {
-    route
+    router
       .get('users', () => {})
       .as('users.index') // api.users.index
 
     router
       .group(() => {
-        route
+        router
           .get('payments', () => {})
           .as('payments.index') // api.commerce.payments.index
       })
@@ -478,7 +478,7 @@ The render method accepts the name of the edge template to render. Optionally, y
 
 :::warning
 
-The `route.on().render()` method only exists when you have configured the [Edge service provider](../views-and-templates/edgejs.md)
+The `router.on().render()` method only exists when you have configured the [Edge service provider](../views-and-templates/edgejs.md)
 
 :::
 
@@ -499,7 +499,7 @@ The renderInertia method accepts the name of the Inertia component to render. Op
 
 :::warning
 
-The `route.on().renderInertia()` method only exists when you have configured the [Inertia service provider](../views-and-templates/inertia.md)
+The `router.on().renderInertia()` method only exists when you have configured the [Inertia service provider](../views-and-templates/inertia.md)
 
 :::
 
